@@ -24,6 +24,8 @@ export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
     padding-top: 15px;
     padding-bottom: 15px;    
 
+    transition: 0.3s;
+
     &:hover {
         cursor: pointer;
         background: #ffffff22;
@@ -39,4 +41,5 @@ export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
             border-radius: 50%;
         }
     `}    
+    
 `;
