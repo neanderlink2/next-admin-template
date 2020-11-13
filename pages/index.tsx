@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
+import { BiHomeAlt } from 'react-icons/bi';
 import { useBreadcrumb } from '../components/BreadcrumbProvider';
 import Layout from '../layout'
 
 
 const IndexPage = () => {
   const { changeBreadcrumbs } = useBreadcrumb();
-  
-  useEffect(() => {    
+  useEffect(() => {
     changeBreadcrumbs([
-      { title: 'Principal', href: '/teste' },
-      { title: 'Teste' }
+      { title: 'Início', icon: <BiHomeAlt /> },
     ]);
-  }, [])
+  }, []);
   return (
     <Layout>
-      <p>oi</p>
+      <p>Essa é a página inicial</p>
+      <p>Utilize a navegação ao lado para verificar outras telas.</p>
     </Layout>
   )
 }

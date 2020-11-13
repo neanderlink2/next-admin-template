@@ -19,13 +19,17 @@ export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: white;
-
-    padding-top: 15px;
-    padding-bottom: 15px;    
-
     transition: 0.3s;
+
+    & a {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;    
+    }
 
     &:hover {
         cursor: pointer;
@@ -42,5 +46,4 @@ export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
             border-radius: 50%;
         }
     `}    
-    
 `;

@@ -16,6 +16,7 @@ export const DropdownStyledItem = styled.li`
     cursor: pointer;
     font-size: 11px;
     padding: 10px 30px;
+    color: white;
 
     &:hover {
         background-color: #ffffff44;

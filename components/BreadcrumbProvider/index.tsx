@@ -1,4 +1,5 @@
-import React, { createContext, useCallback, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { BiHomeAlt } from "react-icons/bi";
 import Breadcrumb from "../Breadcrumb";
 import { BreadcrumbContextType, BreadcrumbItem } from "./types";
 
@@ -13,12 +14,21 @@ export const useBreadcrumb = () => {
 };
 
 export default function BreadcrumbProvider({ children, initialElements = [] }: any) {
-    const [breadcrumbs, setBreadcrumbs] = useState<React.ReactNode[]>(initialElements);
+    const [breadcrumbs, setBreadcrumbs] = useState<React.ReactNode[]>(
+        [
+            <Breadcrumb
+                key={`route-inicio-${Date.now()}`}
+                title="Início"
+                icon={<BiHomeAlt />}
+                disabled
+            />
+        ]
+    );
 
     const changeBreadcrumbs = useCallback((breadcrumbItems: BreadcrumbItem[]) => {
-        const elements = breadcrumbItems.map((item, i) => (
+        const elements = breadcrumbItems.map((item) => (
             <Breadcrumb
-                key={`route-${item.title.toLowerCase()}`}
+                key={`route-${item.title.toLowerCase()}-${Date.now()}`}
                 href={item.href}
                 title={item.title}
                 icon={item.icon}

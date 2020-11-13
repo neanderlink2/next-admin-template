@@ -16,7 +16,7 @@ const grid = `
 `;
 
 const ScreenContainer: React.FC = ({ children }) => {
-    const { scheme, toggleColorSchema } = useThemeToggle();
+    const { scheme } = useThemeToggle();
     const { breadcrumbs } = useBreadcrumb();
 
     return (
@@ -28,11 +28,12 @@ const ScreenContainer: React.FC = ({ children }) => {
                             <LateralMenu />
                         </Menu>
                         <Header as="header">
-                            <HeaderToolbar title="Título" userName="Usuário teste" /> 
-                            {breadcrumbs}
+                            <HeaderToolbar title="Título" userName="Usuário teste" />
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                {breadcrumbs}
+                            </div>
                         </Header>
                         <Principal as="main">
-                            <button onClick={toggleColorSchema}>Toggle</button>
                             {children}
                         </Principal>
                         <Footer as="footer">
