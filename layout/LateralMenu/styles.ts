@@ -10,7 +10,8 @@ export const Navegacao = styled.ul<{theme: AppTheme}>`
     position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(to bottom, #F28963, #ED906E);
+    transition: background 0.3s ease;
+    background: linear-gradient(to bottom, ${({theme}) => theme.main+"AA"}, ${({theme}) => theme.main+"FF"});
     text-align: center;    
 `;
 
@@ -28,7 +29,7 @@ export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
 
     &:hover {
         cursor: pointer;
-        background: #ffffff22;
+        background: #ffffff55;
     }
 
     ${({ header }) => header && css`

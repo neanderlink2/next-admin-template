@@ -7,6 +7,7 @@ import light from '../../styles/light.theme';
 import dark from '../../styles/dark.theme';
 import { useBreadcrumb } from '../../components/BreadcrumbProvider';
 import HeaderToolbar from '../HeaderToolbar';
+import { BiStar } from 'react-icons/bi';
 
 const grid = `
     menu header
@@ -35,7 +36,7 @@ const ScreenContainer: React.FC = ({ children }) => {
                             {children}
                         </Principal>
                         <Footer as="footer">
-                            <p>footer</p>
+                            <p>Aqui é o Rodapé <BiStar /> </p>
                         </Footer>
                     </>
                 )}

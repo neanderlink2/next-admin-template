@@ -1,10 +1,10 @@
 import { AppTheme } from './types';
 
 const theme: AppTheme = {
-    background: "#323232",
-    main: "#F28963",
-    secondary: "#A1553A",
-    textColor: '#f9f9f9',
+    background: "#232A38",
+    main: "#056CF2",
+    secondary: "#0CF2DB",
+    textColor: '#F0F1F2',
     typography: "Poppins, sans-serif"
 }
 

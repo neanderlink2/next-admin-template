@@ -1,5 +1,7 @@
-import React from 'react'
-import { HeaderTitle, Container } from './styles'
+import React, { useState } from 'react'
+import { HeaderTitle, Container, UserName } from './styles'
+import Popover from 'react-popover';
+import DropdownList from './DropdownList';
 
 type Props = {
     title: string;
@@ -7,10 +9,16 @@ type Props = {
 }
 
 const HeaderToolbar: React.FC<Props> = ({ title, userName }) => {
+    const [popoverOpened, setPopoverOpened] = useState(false);
+
     return (
         <Container>
             <HeaderTitle>{title}</HeaderTitle>
-            <span style={{ marginRight: 15 }}>{userName}</span>
+            <Popover preferPlace="below" isOpen={popoverOpened} place="below"
+                onOuterAction={() => setPopoverOpened(false)}
+                body={<DropdownList />}>
+                <UserName onClick={() => setPopoverOpened((old) => !old)}>{userName}</UserName>
+            </Popover>
         </Container>
     )
 }
