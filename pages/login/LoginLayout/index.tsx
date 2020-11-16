@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
-import ThemeToggleProvider from '../../components/ThemeToggleProvider'
-import { Container } from '../../layout/styles'
-import { GlobalStyles } from '../../styles/index.global'
+import ThemeToggleProvider from '../../../components/ThemeToggleProvider'
+import { Container } from '../../../layout/styles'
+import { GlobalStyles } from '../../../styles/index.global'
 
 const LoginLayout: React.FC = ({ children }) => {
     return (
