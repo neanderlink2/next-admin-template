@@ -1,12 +1,16 @@
 import React from 'react'
+import LoginLayout from './LoginLayout';
+import ScreenContainer from './ScreenContainer'
 
-const Login = () => {
+const LoginPage: React.FC = () => {
     return (
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <span>Login</span>
-            <input />
-        </div>
+        <LoginLayout>
+            <ScreenContainer>
+                <span>Login</span>
+                <input />
+            </ScreenContainer>
+        </LoginLayout>
     )
 }
 
-export default Login
+export default LoginPage
