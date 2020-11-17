@@ -1,6 +1,6 @@
 import React from 'react'
 import { ItemNavegacao, Navegacao } from './styles'
-import { BiUser, BiHome, BiCommentDetail } from 'react-icons/bi';
+import { BiUser } from 'react-icons/bi';
 import Link from 'next/link';
 import { navigationItems } from '../../routes';
 
@@ -10,8 +10,8 @@ const LateralMenu = () => {
             <ItemNavegacao header>
                 <BiUser size={32} />
             </ItemNavegacao>
-            {navigationItems.map((nav) => (
-                <ItemNavegacao>
+            {navigationItems.map((nav, i) => (
+                <ItemNavegacao key={`nav-item-${i}`}>
                     <Link href={nav.href}>
                         <a>{nav.icon}</a>
                     </Link>

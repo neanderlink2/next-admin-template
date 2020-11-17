@@ -1,5 +1,4 @@
 import React, { ButtonHTMLAttributes } from 'react'
-import { BiLoader } from 'react-icons/bi';
 import { Button } from '../../Button';
 import { LoadingIcon } from './styles';
 

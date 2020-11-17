@@ -1,4 +1,3 @@
-import { Form } from '@unform/web';
 import styled from 'styled-components';
 import { AppTheme } from '../../styles/types';
 import { manusearCor } from '../../utils/colorUtils';

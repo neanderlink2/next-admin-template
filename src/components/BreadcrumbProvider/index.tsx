@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import { BiHomeAlt } from "react-icons/bi";
 import Breadcrumb from "../Breadcrumb";
 import { BreadcrumbContextType, BreadcrumbItem } from "./types";
@@ -13,7 +13,7 @@ export const useBreadcrumb = () => {
     return context;
 };
 
-export default function BreadcrumbProvider({ children, initialElements = [] }: any) {
+export default function BreadcrumbProvider({ children }: any) {
     const [breadcrumbs, setBreadcrumbs] = useState<React.ReactNode[]>(
         [
             <Breadcrumb

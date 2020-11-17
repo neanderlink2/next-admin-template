@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 import { BiChevronRight } from 'react-icons/bi'
 import { NoActionLabel, StyledLink } from './styles'
