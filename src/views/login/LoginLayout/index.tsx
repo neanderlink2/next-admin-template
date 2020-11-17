@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import React from 'react'
 import ThemeToggleProvider from '../../../components/ThemeToggleProvider'
+import useUser from '../../../hooks/useUser'
 import { Container } from '../../../layout/styles'
 
 const LoginLayout: React.FC = ({ children }) => {
+    useUser({        
+        redirectTo: '/',
+        redirectIfFound: true
+    });
+    
     return (
         <ThemeToggleProvider initialSchema="light">
             <Head>

@@ -8,6 +8,7 @@ import dark from '../../styles/dark.theme';
 import { useBreadcrumb } from '../../components/BreadcrumbProvider';
 import HeaderToolbar from '../HeaderToolbar';
 import { BiStar } from 'react-icons/bi';
+import { useAuth } from '../../components/AuthProvider';
 
 const grid = `
     menu header
@@ -16,6 +17,7 @@ const grid = `
 `;
 
 const ScreenContainer: React.FC = ({ children }) => {
+    const { user } = useAuth();
     const { scheme } = useThemeToggle();
     const { breadcrumbs } = useBreadcrumb();
 
@@ -28,7 +30,7 @@ const ScreenContainer: React.FC = ({ children }) => {
                             <LateralMenu />
                         </Menu>
                         <Header as="header">
-                            <HeaderToolbar title="Título" userName="Usuário teste" />
+                            <HeaderToolbar title="Título" userName={user?.username ?? ''} />
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 {breadcrumbs}
                             </div>

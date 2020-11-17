@@ -3,8 +3,13 @@ import Head from 'next/head';
 import { GlobalStyles } from '../styles/index.global';
 import ThemeToggleProvider from '../components/ThemeToggleProvider';
 import ScreenContainer from './ScreenContainer';
+import useUser from '../hooks/useUser';
 
 const Layout: React.FC = ({ children }) => {
+    useUser({
+        redirectTo: '/login',
+        redirectIfFound: false
+    })
     return (
         <ThemeToggleProvider initialSchema="light">
             <Head>

@@ -7,7 +7,8 @@ export function usePersistedState<T = any>(
     const [state, setState] = useState<T>(defaultState);
 
     useEffect(() => {
-        if (localStorage.getItem(key)) {
+        const item = localStorage.getItem(key);
+        if (item && item !== "undefined" && item !== "null") {
             setState(JSON.parse(localStorage.getItem(key) ?? ""));
         }
     }, [key]);

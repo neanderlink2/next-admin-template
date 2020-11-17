@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import InputField from '../../components/Forms/InputField';
 import LoginLayout from './LoginLayout';
 import ScreenContainer from './ScreenContainer'
@@ -6,19 +6,13 @@ import { LoginCard, LoginContainer } from './styles';
 import SubmitButton from '../../components/Forms/SubmitButton';
 import { Formulario } from '../../components/Forms/styles';
 import PasswordField from '../../components/Forms/PasswordField';
-import { wait } from '../../utils/promiseUtils';
-import { useRouter } from 'next/router'
+import { useAuth } from '../../components/AuthProvider';
 
-const LoginPage: React.FC = () => {
-    const [loading, setLoading] = useState(false);
-    const router = useRouter();
+const LoginPage: React.FC = () => {    
+    const { entrar, loading } = useAuth();
 
-    async function handleSubmit(data: any) {
-        setLoading(true);
-        console.log(data);
-        await wait(3000);
-        setLoading(false);
-        router.push('/');
+    async function handleSubmit(data: any) {        
+        entrar(data.login, data.password);
     }
 
     return (
