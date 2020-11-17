@@ -1,6 +1,7 @@
 import { AppTheme } from './types';
 
 const theme: AppTheme = {
+    type: 'dark',
     background: "#232A38",
     main: "#056CF2",
     secondary: "#0CF2DB",

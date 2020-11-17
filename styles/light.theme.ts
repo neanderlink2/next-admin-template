@@ -1,6 +1,7 @@
 import { AppTheme } from './types';
 
 const theme: AppTheme = {
+    type: 'light',
     background: "#f9f9f9",
     main: "#ED906E",
     secondary: "#A1553A",

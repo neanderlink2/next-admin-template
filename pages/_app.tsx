@@ -1,9 +1,15 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router'
-import BreadcrumbProvider from '../components/BreadcrumbProvider'
+import BreadcrumbProvider from '../components/BreadcrumbProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <BreadcrumbProvider initialElements={[]}>
+            <ToastContainer
+                toastStyle={{ borderRadius: 7 }}
+                position="top-center"
+            />
             <Component {...pageProps} />
         </BreadcrumbProvider>
     )
