@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiCommentDetail, BiHome, BiLogIn } from 'react-icons/bi';
+import { BiCommentDetail, BiHome, BiListOl, BiLogIn } from 'react-icons/bi';
 
 type Navigation = {
     href: string;
@@ -17,6 +17,11 @@ export const navigationItems: Navigation[] = [
         href: '/forms',
         icon: <BiCommentDetail size={20} />,
         title: 'Formulários'
+    },
+    {
+        href: '/listing',
+        icon: <BiListOl size={20} />,
+        title: 'Listagem de itens'
     },
     {
         href: '/login',
