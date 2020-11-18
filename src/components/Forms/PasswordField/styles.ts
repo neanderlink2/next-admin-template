@@ -1,13 +1,6 @@
 import styled, { css } from 'styled-components';
 import { AppTheme } from '../../../styles/types';
 
-export const IconButton = styled.button`
-    background: transparent;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 50%;
-`;
-
 export const BorderlessInput = styled.input<{ theme: AppTheme }>`
     border: none;
     background: transparent;

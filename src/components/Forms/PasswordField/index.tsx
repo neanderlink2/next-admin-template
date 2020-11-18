@@ -2,9 +2,10 @@ import React, { useRef, useEffect, InputHTMLAttributes, useState } from 'react';
 import { useField } from '@unform/core';
 import { ErrorLabel, InputGroup } from '../styles';
 import { BiHide, BiShow } from 'react-icons/bi';
-import { BorderlessInput, IconButton, InputFake } from './styles';
+import { BorderlessInput, InputFake } from './styles';
 import { useTheme } from 'styled-components';
 import { AppTheme } from '../../../styles/types';
+import { IconButton } from '../../Button';
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
     name: string;

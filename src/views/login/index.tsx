@@ -7,8 +7,13 @@ import SubmitButton from '../../components/Forms/SubmitButton';
 import { Formulario } from '../../components/Forms/styles';
 import PasswordField from '../../components/Forms/PasswordField';
 import { useAuth } from '../../components/AuthProvider';
+import useUser from '../../hooks/useUser';
 
 const LoginPage: React.FC = () => {    
+    useUser({        
+        redirectTo: '/',
+        redirectIfFound: true
+    });
     const { entrar, loading } = useAuth();
 
     async function handleSubmit(data: any) {        

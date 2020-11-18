@@ -2,20 +2,27 @@ import React, { useState } from 'react'
 import { HeaderTitle, Container, UserName } from './styles'
 import Popover from 'react-popover';
 import DropdownList from './DropdownList';
-import { BiChevronDown } from 'react-icons/bi';
+import { BiChevronDown, BiMenu } from 'react-icons/bi';
 import ThemeToggle from './ThemeToggle';
+import { useMediaQuery } from 'atomic-layout';
+import { IconButton } from '../../components/Button';
 
 type Props = {
     title: string;
     userName: string;
+    onMenuClick: () => void;
 }
 
-const HeaderToolbar: React.FC<Props> = ({ title, userName }) => {
+const HeaderToolbar: React.FC<Props> = ({ title, userName, onMenuClick }) => {
     const [popoverOpened, setPopoverOpened] = useState(false);
+    const isMobileScreen = useMediaQuery({ maxWidth: 767 });
 
     return (
         <Container>
-            <HeaderTitle>{title}</HeaderTitle>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                {isMobileScreen && <IconButton style={{ marginRight: 10 }} onClick={onMenuClick}><BiMenu /></IconButton>}
+                <HeaderTitle>{title}</HeaderTitle>
+            </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <ThemeToggle />
                 <Popover preferPlace="below" isOpen={popoverOpened} place="below"

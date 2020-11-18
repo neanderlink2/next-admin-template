@@ -4,7 +4,7 @@ import { BiUser } from 'react-icons/bi';
 import Link from 'next/link';
 import { navigationItems } from '../../routes';
 
-const LateralMenu = () => {
+const LateralMenu = () => {    
     return (
         <Navegacao>
             <ItemNavegacao header>

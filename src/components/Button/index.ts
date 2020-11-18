@@ -31,5 +31,19 @@ export const Button = styled.button<{ theme: AppTheme, fullWidth?: boolean }>`
         color: #929292;
     }
 
-    ${({fullWidth}) => (fullWidth && css`width: 100%;`)}
+    ${({ fullWidth }) => (fullWidth && css`width: 100%;`)}
+`;
+
+export const IconButton = styled.button<{ theme: AppTheme }>`
+    border: none;
+    background-color: transparent;
+    cursor: pointer;    
+    display: flex;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: ${({ theme }) => theme.textColor};
+    &:hover {
+        background-color: ${({ theme }) => theme.textColor}33;
+    }
 `;

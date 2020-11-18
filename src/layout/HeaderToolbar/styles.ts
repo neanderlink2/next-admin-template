@@ -14,7 +14,6 @@ export const HeaderTitle = styled.h1`
 `;
 
 export const UserName = styled.span`
-    margin-right: 15px;
     opacity: 1;
     cursor: pointer;
     transition: 0.3s;

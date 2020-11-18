@@ -7,5 +7,5 @@ export const Container = styled(Composition)<{ theme: AppTheme }>`
     flex: 1;
     width: 100vw;
     height: 100vh;
-    transition: 0.3s;
+    transition: 0.3s;    
 `;
