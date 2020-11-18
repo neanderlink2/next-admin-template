@@ -54,8 +54,8 @@ export default function AuthProvider({ children }: PropsWithChildren<{}>) {
     }
 
     async function sair() {
-        await axios.post("/api/logout");
         setIsLoading(true);
+        await axios.post("/api/logout");
         setUsuario(undefined);
         setToken(null);
         setIsLoading(false);
