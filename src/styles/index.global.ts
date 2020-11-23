@@ -1,5 +1,5 @@
 
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { AppTheme } from "./types";
 
 export const GlobalStyles = createGlobalStyle<{ theme: AppTheme }>`
@@ -21,6 +21,13 @@ export const GlobalStyles = createGlobalStyle<{ theme: AppTheme }>`
 
     h1 {
         margin: 0;
+    }
+
+    hr {        
+        border-color: ${({ theme }) => theme.secondary};
+        border-style: solid;
+        border-radius: 7px;
+        border-width: 2px;
     }
 
     .Toastify__toast {
@@ -61,4 +68,12 @@ export const GlobalStyles = createGlobalStyle<{ theme: AppTheme }>`
         background: transparent;
         font-size: 12px;
     }
+`;
+
+export const InlineFlex = styled.div<{ spaceBetween: boolean }>`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    ${({ spaceBetween }) => spaceBetween && "justify-content: space-between;"}
 `;

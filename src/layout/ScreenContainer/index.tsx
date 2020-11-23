@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import { useThemeToggle } from '../../components/ThemeToggleProvider';
 import LateralMenu from '../LateralMenu';
-import { Container } from '../styles';
+import { Container, MainScrollbar } from '../styles';
 import light from '../../styles/light.theme';
 import dark from '../../styles/dark.theme';
 import { useBreadcrumb } from '../../components/BreadcrumbProvider';
@@ -11,6 +11,7 @@ import { BiStar } from 'react-icons/bi';
 import { useAuth } from '../../components/AuthProvider';
 import { useMediaQuery } from 'atomic-layout';
 import Sidebar from '../Sidebar';
+import Scrollbar from 'react-scrollbars-custom';
 
 const grid = `
     menu header
@@ -46,7 +47,9 @@ const ScreenContainer: React.FC = ({ children }) => {
                             </div>
                         </Header>
                         <Principal as="main" style={{ marginRight: 15, marginLeft: 15 }}>
-                            {children}
+                            <MainScrollbar >
+                                {children}
+                            </MainScrollbar>
                         </Principal>
                         <Footer as="footer" style={{ marginRight: 15, marginLeft: 15 }}>
                             <p>Aqui é o Rodapé <BiStar /> </p>

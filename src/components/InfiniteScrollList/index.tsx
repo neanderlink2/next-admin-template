@@ -4,7 +4,7 @@ import { ListaItens } from './styles';
 type Props = {
     loading?: boolean;
     getMore: () => void;
-    renderItem: (item: any) => React.ReactNode;
+    renderItem: (item: any, index: number) => React.ReactNode;
     data: any[];
     LoadingComponent?: React.ReactNode;
     containerStyle?: React.CSSProperties
@@ -13,11 +13,11 @@ type Props = {
 const verifyIsInBottomOfElement = (selector: string | HTMLElement, onEndReached: () => void) => {
     if (typeof selector === "string") {
         const element = document.getElementById(selector);
-        if (element && element.offsetHeight + element.scrollTop >= element.scrollHeight) {            
+        if (element && element.offsetHeight + element.scrollTop >= element.scrollHeight) {
             onEndReached();
         }
     } else {
-        if (selector && selector.offsetHeight + selector.scrollTop >= selector.scrollHeight) {            
+        if (selector && selector.offsetHeight + selector.scrollTop >= selector.scrollHeight) {
             onEndReached();
         }
     }
@@ -41,14 +41,16 @@ const InfiniteScrollList: React.FC<Props> = ({ data, loading, getMore, renderIte
     }, [containerRef.current, loading]);
 
     function onEndOfContainer() {
-        getMore();
+        if (!loading) {
+            getMore();
+        }
     }
 
     return (
         <>
             <ListaItens ref={containerRef} style={containerStyle}>
-                {data?.map((item) => (
-                    renderItem(item)
+                {data?.map((item, index) => (
+                    renderItem(item, index)
                 ))}
             </ListaItens>
             {loading && (LoadingComponent || <span>Carregando...</span>)}
