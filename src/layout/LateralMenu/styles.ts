@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { AppTheme } from '../../styles/types';
 
 export const Navegacao = styled.ul<{theme: AppTheme}>`
-    height: 100%;
+    height: 98%;
     width: 75px;
     margin: 0;    
     padding: 10px 0px;
@@ -13,6 +13,9 @@ export const Navegacao = styled.ul<{theme: AppTheme}>`
     transition: background 0.3s ease;
     background: linear-gradient(to bottom, ${({theme}) => theme.main+"AA"}, ${({theme}) => theme.main+"FF"});
     text-align: center;    
+
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;    
 `;
 
 export const ItemNavegacao = styled.li<{ header?: boolean, theme: AppTheme }>`
